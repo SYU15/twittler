@@ -3,6 +3,7 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="main.css"></script>
   </head>
   <body>
     <script>
@@ -14,10 +15,10 @@
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
+          var $tweet = $('<div class="post"></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
           $tweet.appendTo($body);
-          var $timeStamp = $('<ul><li></li></ul>');
+          var $timeStamp = $('<ul class="time"><li></li></ul>');
           $timeStamp.text('Posted on: ' + tweet.created_at);
           $timeStamp.appendTo($tweet);
           index -= 1;
