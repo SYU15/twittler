@@ -10,7 +10,7 @@
 
       $(document).ready(function(){
         var $body = $('body');
-        $body.html('');
+        $body.html('<button type="button" id ="button">Refresh Tweets</button>');
 
         var index = streams.home.length - 1;
         while(index >= 0){
@@ -23,7 +23,10 @@
           $timeStamp.appendTo($tweet);
           index -= 1;
         }
-
+        
+        $('#button').on("click", function(){
+          location.reload();
+        });
       });
 
     </script>
