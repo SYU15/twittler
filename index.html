@@ -17,6 +17,9 @@
           var $tweet = $('<div></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message);
           $tweet.appendTo($body);
+          var $timeStamp = $('<ul><li></li></ul>');
+          $timeStamp.text('Posted on: ' + tweet.created_at);
+          $timeStamp.appendTo($tweet);
           index -= 1;
         }
 
