@@ -14,19 +14,33 @@
         $body.html('<button type="button" id ="button">Refresh Tweets</button>');
 
         var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
+        var beginningIndex = index; 
+        var displayTweets = function(whereToPut) {
           var $tweet = $('<div class="post"></div>');
           $tweet.html('@' + '<span class="username">'+tweet.user +'</span>' + ': ' + tweet.message);
-          $tweet.appendTo($body);
+          if (whereToPut === 'appendTo') {
+            $tweet.appendTo($body);
+          } else {
+            $tweet.prependTo($body);
+          }
           var $timeStamp = $('<ul class="time"><li></li></ul>');
           $timeStamp.text('Posted on: ' + tweet.created_at);
           $timeStamp.appendTo($tweet);
+        }
+        while(index >= 0){
+          var tweet = streams.home[index];
+          displayTweets('appendTo');
           index -= 1;
         }
         
         $('#button').on("click", function(){
-          location.reload();
+          var newIndex = streams.home.length -1;
+          while (newIndex > beginningIndex) {
+            var tweet = streams.home[newIndex];
+            displayTweets('prependTo');
+            newIndex -= 1;
+          }
+          beginningIndex = streams.home.length -1;
         });
         $(".username").on ('click', function(){
           var userId = $(this).text();
