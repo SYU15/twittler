@@ -31,9 +31,14 @@
         $(".username").on ('click', function(){
           var userId = $(this).text();
           var userStream = streams.users[userId];
+          var $allTweets = $('<div class="modalTweet"></div>');
           $.each(userStream, function(i, value) {
-            console.log(value.message + " " + value.created_at);
+            var $eachTweet = $('<section></section>');
+            $eachTweet.html('<p class="message">' + value.message+ '</p>' + '<p class ="time">'+ value.created_at + '</p>');
+            $eachTweet.appendTo($allTweets); 
+            // console.log(value.message + " " + value.created_at);
           });
+          $allTweets.modal();
         });
       });
 
