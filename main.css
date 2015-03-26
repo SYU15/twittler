@@ -1,6 +1,9 @@
 body {
   font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
 }
+#button {
+  float: right;
+}
 .modalTweet {
   background: rgb(46, 13, 71);
   background: rgba(46, 13, 71, 0.9);

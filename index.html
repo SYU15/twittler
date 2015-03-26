@@ -15,29 +15,28 @@
 
         var index = streams.home.length - 1;
         var beginningIndex = index; 
-        var displayTweets = function(whereToPut) {
+
+        while(index >= 0){
+          var tweet = streams.home[index];
           var $tweet = $('<div class="post"></div>');
           $tweet.html('@' + '<span class="username">'+tweet.user +'</span>' + ': ' + tweet.message);
-          if (whereToPut === 'appendTo') {
-            $tweet.appendTo($body);
-          } else {
-            $tweet.prependTo($body);
-          }
+          $tweet.appendTo($body);
           var $timeStamp = $('<ul class="time"><li></li></ul>');
           $timeStamp.text('Posted on: ' + tweet.created_at);
           $timeStamp.appendTo($tweet);
-        }
-        while(index >= 0){
-          var tweet = streams.home[index];
-          displayTweets('appendTo');
           index -= 1;
         }
         
         $('#button').on("click", function(){
           var newIndex = streams.home.length -1;
-          while (newIndex > beginningIndex) {
+          while (newIndex >= beginningIndex) {
             var tweet = streams.home[newIndex];
-            displayTweets('prependTo');
+            var $tweet = $('<div class="post"></div>');
+            $tweet.html('@' + '<span class="username">'+tweet.user +'</span>' + ': ' + tweet.message);
+            $tweet.insertAfter("#button");
+            var $timeStamp = $('<ul class="time"><li></li></ul>');
+            $timeStamp.text('Posted on: ' + tweet.created_at);
+            $timeStamp.appendTo($tweet);
             newIndex -= 1;
           }
           beginningIndex = streams.home.length -1;
