@@ -27,21 +27,7 @@
           index -= 1;
         }
         
-        $('#button').on("click", function(){
-          var newIndex = streams.home.length -1;
-          while (newIndex >= beginningIndex) {
-            var tweet = streams.home[newIndex];
-            var $tweet = $('<div class="post"></div>');
-            $tweet.html('@' + '<span class="username">'+tweet.user +'</span>' + ': ' + tweet.message);
-            $tweet.insertAfter("#button");
-            var $timeStamp = $('<ul class="time"><li></li></ul>');
-            $timeStamp.text('Posted on: ' + tweet.created_at);
-            $timeStamp.appendTo($tweet);
-            newIndex -= 1;
-          }
-          beginningIndex = streams.home.length -1;
-        });
-        $(".username").on ('click', function(){
+        $(document).on('click', '.username', function(){
           var userId = $(this).text();
           var userStream = streams.users[userId];
           var $allTweets = $('<div class="modalTweet"></div>');
@@ -49,9 +35,22 @@
             var $eachTweet = $('<section></section>');
             $eachTweet.html('<p class="message">' + value.message+ '</p>' + '<p class ="time">'+ value.created_at + '</p>');
             $eachTweet.appendTo($allTweets); 
-            // console.log(value.message + " " + value.created_at);
           });
           $allTweets.modal();
+        });
+        $('#button').on('click', function(){
+          var newIndex = streams.home.length -1;
+          while (newIndex >= beginningIndex) {
+            var tweet = streams.home[newIndex];
+            var $tweet = $('<div class="post"></div>');
+            $tweet.html('@' + '<span class="username">'+tweet.user +'</span>' + ': ' + tweet.message);
+            $tweet.insertAfter('#button');
+            var $timeStamp = $('<ul class="time"><li></li></ul>');
+            $timeStamp.text('Posted on: ' + tweet.created_at);
+            $timeStamp.appendTo($tweet);
+            newIndex -= 1;
+          }
+          beginningIndex = streams.home.length -1;
         });
       });
 
