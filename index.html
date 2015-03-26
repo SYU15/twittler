@@ -16,7 +16,7 @@
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div class="post"></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.html('@' + '<span class="username">'+tweet.user +'</span>' + ': ' + tweet.message);
           $tweet.appendTo($body);
           var $timeStamp = $('<ul class="time"><li></li></ul>');
           $timeStamp.text('Posted on: ' + tweet.created_at);
@@ -26,6 +26,13 @@
         
         $('#button').on("click", function(){
           location.reload();
+        });
+        $(".username").on ('click', function(){
+          var userId = $(this).text();
+          var userStream = streams.users[userId];
+          $.each(userStream, function(i, value) {
+            console.log(value.message + " " + value.created_at);
+          });
         });
       });
 
