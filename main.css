@@ -6,25 +6,47 @@ body {
 }
 .post {
   padding: 2%;
+  text-align: center;
+  font-size: 25px;
 }
 .post:nth-child(odd) {
     background-color: #420D3A;
     color: #E4FFE6;
+}
+.username {
+  font-size: 27px;
+}
+.username:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.message {
+  font-size: 16px;
+  color: #FFDBED;
+}
+.time {
+  font-style: italic;
+  font-size: 12px;
+
 }
 
 #button {
   float: right;
 }
 .modalTweet {
-  background: rgb(66, 13, 58);
-  background: rgba(66, 13, 58, 0.9);
-  color:white;
-  padding:2%;
+  background: rgb(33, 43, 30);
+  background: rgba(33, 43, 30, 0.95);
+  color:white; 
+  padding:1% 2%;
+  text-align: center;
+  border: 3px solid #420D3A;
+
 }
 
 #simplemodal-container {
   max-height: 70%;
-  width: 40%;
+  width: 38%;
+  padding: 1%;
 }
 
 #simplemodal-container a.modalCloseImg {
@@ -34,7 +56,7 @@ body {
   display:inline;
   z-index:3200;
   position:absolute;
-  top:-15px;
-  right:-15px;
+  top:-8px;
+  right:-8px;
   cursor:pointer;
 }

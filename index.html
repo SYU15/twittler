@@ -40,7 +40,7 @@
         });
         $('#button').on('click', function(){
           var newIndex = streams.home.length -1;
-          while (newIndex >= beginningIndex) {
+          while (newIndex > beginningIndex) {
             var tweet = streams.home[newIndex];
             var $tweet = $('<div class="post"></div>');
             $tweet.html('@' + '<span class="username">'+tweet.user +'</span>' + ': ' + tweet.message);
