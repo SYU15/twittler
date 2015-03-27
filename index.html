@@ -30,7 +30,7 @@
         $(document).on('click', '.username', function(){
           var userId = $(this).text();
           var userStream = streams.users[userId];
-          var $allTweets = $('<div class="modalTweet"></div>');
+          var $allTweets = $('<div class="modalTweet">'+'<h2>'+userId+' says:'+'<h2>'+'</div>');
           $.each(userStream, function(i, value) {
             var $eachTweet = $('<section></section>');
             $eachTweet.html('<p class="message">' + value.message+ '</p>' + '<p class ="time">'+ value.created_at + '</p>');

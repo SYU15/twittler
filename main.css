@@ -1,18 +1,30 @@
 body {
   font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+  background-color: #E4FFE6;
+  color: #420D3A;
+  padding: 2% 5%;
 }
+.post {
+  padding: 2%;
+}
+.post:nth-child(odd) {
+    background-color: #420D3A;
+    color: #E4FFE6;
+}
+
 #button {
   float: right;
 }
 .modalTweet {
-  background: rgb(46, 13, 71);
-  background: rgba(46, 13, 71, 0.9);
+  background: rgb(66, 13, 58);
+  background: rgba(66, 13, 58, 0.9);
   color:white;
   padding:2%;
 }
 
 #simplemodal-container {
   max-height: 70%;
+  width: 40%;
 }
 
 #simplemodal-container a.modalCloseImg {
