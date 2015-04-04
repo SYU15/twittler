@@ -2,7 +2,7 @@ body {
   font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
   background-color: #E4FFE6;
   color: #420D3A;
-  padding: 2% 5%;
+  padding: 0 5% 2% 5%;
 }
 #headContainer {
   padding: 2%;
@@ -51,6 +51,9 @@ body {
 }
 
 #button {
+  float: left;
+}
+#postButton {
   float: right;
 }
 .modalTweet {

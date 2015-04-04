@@ -12,7 +12,7 @@
 
       $(document).ready(function(){
         var $body = $('body');
-        $body.html('<div id="headContainer"><h1 class="header">Twittler<h1><h2 class="subtext">Where all your friends are babbling robots</h2></div><button type="button" id ="button">Refresh Tweets</button>');
+        $body.html('<div id="headContainer"><h1 class="header">Twittler<h1><h2 class="subtext">Where all your friends are babbling robots</h2></div><button type="button" id="postButton">Post A Tweet</button><button type="button" id ="button">Refresh Tweets</button>');
 
         var index = streams.home.length - 1;
         var beginningIndex = index; 
@@ -52,6 +52,11 @@
             newIndex -= 1;
           }
           beginningIndex = streams.home.length -1;
+        });
+
+        $('#postButton').on('click', function(){
+          var $submit = $('<div class="modalTweet"><h3>Vent.</h3><textarea rows="8" cols="50" name="post" form="postingTweet"></textarea><form action="data_generator.js" id="postingTweet"><input type="submit"></form></div>');
+          $submit.modal();
         });
       });
 
