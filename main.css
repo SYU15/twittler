@@ -4,6 +4,20 @@ body {
   color: #420D3A;
   padding: 2% 5%;
 }
+#headContainer {
+  padding: 2%;
+  background: url("candy.jpg") no-repeat;
+}
+.header {
+  font-size: 60px;
+  text-align:center;
+}
+.subtext {
+  font-size: 40px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 200;
+}
 .post {
   padding: 2%;
   text-align: center;
@@ -20,6 +34,7 @@ body {
 }
 .username {
   font-size: 27px;
+  color:#8F7D8D;
 }
 .username:hover {
   text-decoration: underline;
