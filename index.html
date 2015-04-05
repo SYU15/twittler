@@ -55,8 +55,17 @@
         });
 
         $('#postButton').on('click', function(){
-          var $submit = $('<div class="modalTweet"><h3>Vent.</h3><textarea rows="8" cols="50" name="post" form="postingTweet"></textarea><form action="data_generator.js" id="postingTweet"><input type="submit"></form></div>');
+          var $submit = $('<div class="modalTweet"><h3>Vent.</h3><p>Username:</p><input type="text" form="postingTweet" id="visitorName"><textarea rows="8" cols="50" name="post" form="postingTweet" id="message"></textarea><form id="postingTweet"><button type="button" id="submitTweet">Post A Tweet</button></form></div>');
           $submit.modal();
+        });
+
+       $(document).on('click', '#submitTweet', function(){
+          console.log('this is being called');
+          var textValue = $('#message').val();
+          var userValue = $('#visitorName').val();
+          visitor = userValue;
+          streams.users[userValue] = [];
+          writeTweet(textValue);
         });
       });
 
