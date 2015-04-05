@@ -55,7 +55,7 @@
         });
 
         $('#postButton').on('click', function(){
-          var $submit = $('<div class="modalTweet"><h3>Vent.</h3><p>Username:</p><input type="text" form="postingTweet" id="visitorName"><textarea rows="8" cols="50" name="post" form="postingTweet" id="message"></textarea><form id="postingTweet"><button type="button" id="submitTweet">Post A Tweet</button></form></div>');
+          var $submit = $('<div class="modalTweet"><p>Username:</p><input type="text" form="postingTweet" id="visitorName"><h3>Vent.</h3><textarea rows="8" cols="50" name="post" form="postingTweet" id="message"></textarea><form id="postingTweet"><button type="button" id="submitTweet">Post A Tweet</button></form></div>');
           $submit.modal();
         });
 
@@ -66,6 +66,7 @@
           visitor = userValue;
           streams.users[userValue] = [];
           writeTweet(textValue);
+          $.modal.close();
         });
       });
 

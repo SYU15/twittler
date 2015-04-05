@@ -56,6 +56,10 @@ body {
 #postButton {
   float: right;
 }
+#visitorName {
+  margin-bottom: 3%;
+  margin-top: 0;
+}
 .modalTweet {
   background: rgb(33, 43, 30);
   background: rgba(33, 43, 30, 0.95);
